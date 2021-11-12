@@ -40,8 +40,8 @@ interface Meta {
 }
 
 
-const getMeasurements = async ():Promise<MeasurementsResponse> => {
-  const response = await getOpenAQResponse<MeasurementsResponse>('/measurements')
+const getMeasurements = async (options?: object):Promise<MeasurementsResponse> => {
+  const response = await getOpenAQResponse<MeasurementsResponse>('/measurements', options)
   return response
 };
 

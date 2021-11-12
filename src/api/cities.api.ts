@@ -24,8 +24,8 @@ interface Meta {
 }
 
 
-const getCities = async ():Promise<CitiesResponse> => {
-  const response = await getOpenAQResponse<CitiesResponse>('/cities')
+const getCities = async (options?: object):Promise<CitiesResponse> => {
+  const response = await getOpenAQResponse<CitiesResponse>('/cities', options)
   return response
 };
 
