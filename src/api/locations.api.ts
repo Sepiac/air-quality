@@ -1,10 +1,5 @@
 import getOpenAQResponse from './openAQ.api';
-export interface MeasurementsResponse {
-  meta: Meta;
-  results: Result[];
-}
-
-interface LocationsResponse {
+export interface LocationsResponse {
   meta: Meta;
   results: Result[];
 }
