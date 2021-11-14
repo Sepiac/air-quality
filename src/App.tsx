@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import { getCities, CitiesResult} from './api'
-import { CitySideBySide } from './components'
+import { CitySideBySide, CityPicker } from './components'
 import { Container, Header } from 'semantic-ui-react'
+import {QueryClient, QueryClientProvider} from 'react-query'
 
 function App() {
   const [leftCity, setLeftCity] = useState<CitiesResult>()
@@ -28,10 +29,14 @@ function App() {
   
   return (
     <div className="App">
-      <Header as='h1'>City Air Quality Comparer</Header>
-      <Container>
-        <CitySideBySide left={leftCity} right={rightCity}/>
-      </Container>
+      <QueryClientProvider client={new QueryClient()}>
+        <Header as='h1'>City Air Quality Comparer</Header>
+        <Container>
+          <CityPicker onDatachange={setLeftCity}/>
+          <CityPicker onDatachange={setRightCity}/>
+          <CitySideBySide left={leftCity} right={rightCity}/>
+        </Container>
+        </ QueryClientProvider>
     </div>
   );
 }
