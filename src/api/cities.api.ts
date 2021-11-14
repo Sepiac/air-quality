@@ -1,10 +1,11 @@
 import getOpenAQResponse from './openAQ.api';
+
 export interface CitiesResponse {
   meta: Meta;
   results: Result[];
 }
 
-interface Result {
+export interface Result {
   country: string;
   city: string;
   count: number;
@@ -14,7 +15,7 @@ interface Result {
   parameters: string[];
 }
 
-interface Meta {
+export interface Meta {
   name: string;
   license: string;
   website: string;

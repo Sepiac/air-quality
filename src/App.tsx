@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+import { getCities, CitiesResult} from './api'
+import { CitySideBySide } from './components'
+import { Container, Header } from 'semantic-ui-react'
 
 function App() {
+  const [leftCity, setLeftCity] = useState<CitiesResult>()
+  const [rightCity, setRightCity] = useState<CitiesResult>()
+
+  useEffect(() => {
+    getCities({
+        params: {
+          city: 'Jacksonville'
+        }
+      }).then(response => {
+        setLeftCity(response.results[0])
+      })
+      getCities({
+        params: {
+          city: 'Miami'
+        }
+      }).then(response => {
+        setRightCity(response.results[0])
+      })
+  }, [])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header as='h1'>City Air Quality Comparer</Header>
+      <Container>
+        <CitySideBySide left={leftCity} right={rightCity}/>
+      </Container>
     </div>
   );
 }
