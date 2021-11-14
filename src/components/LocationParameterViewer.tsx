@@ -1,6 +1,6 @@
 import React from 'react'
 import { LocationsParameter } from '../api'
-import { Segment } from 'semantic-ui-react'
+import { Segment, Statistic } from 'semantic-ui-react'
 
 export interface Props {
   parameter: LocationsParameter | undefined

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { CitiesResult, LocationsResult } from '../api'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Divider } from 'semantic-ui-react'
 import { CityViewer, CityPicker, LocationViewer } from '.'
 
 export interface Props {
@@ -17,11 +17,12 @@ const CitySideBySide = (props: Props) => {
 
 
   return (
-    <Grid columns={2} >
+    <Grid columns={2}>
       <Grid.Row>
         <Grid.Column floated='left' width={7}>
           <CityPicker setCity={setLeftCity} setLocations={setLeftLocations} />
           <CityViewer city={leftCity} />
+          <Divider />
           {leftLocations?.map(location => (
             <LocationViewer location={location} />
           ))}
@@ -29,6 +30,7 @@ const CitySideBySide = (props: Props) => {
         <Grid.Column floated='right' width={7}>
           <CityPicker setCity={setRightCity} setLocations={setRightLocations} />
           <CityViewer city={rightCity} />
+          <Divider />
           {rightLocations?.map(location => (
             <LocationViewer location={location} />
           ))}
