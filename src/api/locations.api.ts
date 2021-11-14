@@ -4,7 +4,7 @@ export interface LocationsResponse {
   results: Result[];
 }
 
-interface Result {
+export interface Result {
   id: number;
   city: string;
   name?: string;
@@ -28,7 +28,7 @@ interface Coordinates {
   longitude: number;
 }
 
-interface Parameter {
+export interface Parameter {
   id: number;
   unit: string;
   count: number;

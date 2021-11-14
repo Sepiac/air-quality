@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import { Input } from 'semantic-ui-react'
-import { useCityByName } from '../hooks'
+import { useCityByName, useLocationsByCity } from '../hooks'
 
 interface Props {
-  onDatachange: Function
+  setCity: Function,
+  setLocations: Function
 }
 
 const CityPicker = (props: Props) => {
-  const { onDatachange } = props
+  const { setCity, setLocations } = props
   const [citySearchName, setCitySearchName] = useState('')
-  const {data} = useCityByName(citySearchName)
+  const {data: citiesData} = useCityByName(citySearchName)
+  const {data: locationsData} = useLocationsByCity(citySearchName)
 
   useEffect(() => {
-    onDatachange(data?.results[0])
-  }, [data, onDatachange])
+    setCity(citiesData?.results[0])
+  }, [citiesData, setCity])
+
+  useEffect(() => {
+    setLocations(locationsData?.results)
+  }, [locationsData?.results, setLocations])
 
   return (
     <Input placeholder="Type the name of a city" onChange={e => setCitySearchName(e.target.value)}/>

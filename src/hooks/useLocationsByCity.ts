@@ -1,13 +1,13 @@
 import { useQuery } from 'react-query'
-import { getCities } from '../api'
+import { getLocations } from '../api'
 
 const useCityByName = (cityName: string) => {
-  return useQuery([cityName, 'cityByName'], () => getCities({
+  return useQuery([cityName, 'locations'], () => getLocations({
     params: {
       city: cityName
     }
   }), {
-    staleTime: (1000 * 60) * 60
+    staleTime: (1000 * 60) * 60,
   })
 }
 
