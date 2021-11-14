@@ -11,7 +11,7 @@ const CityViewer = (props: Props) => {
   const { location } = props
   return (
     <>
-      <Header as="h2">{location?.name}</Header>
+      <Header as="h3">{location?.name}</Header>
       <Table striped>
         <Table.Header>
           <Table.HeaderCell>Pollutant</Table.HeaderCell>
