@@ -12,7 +12,7 @@ const CityViewer = (props: Props) => {
     city ? <Card>
       <Card.Content>
         <Card.Header>
-        <Flag name={city.country.toLowerCase() as FlagNameValues}/> {city?.city}
+        <Flag name={city?.country?.toLowerCase() as FlagNameValues}/> {city?.city}
         </Card.Header>
       </Card.Content>
     </Card> : null
