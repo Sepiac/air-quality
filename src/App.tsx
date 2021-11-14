@@ -3,7 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import { CitySideBySide } from './components'
 import { Container, Header } from 'semantic-ui-react'
-import {QueryClient, QueryClientProvider} from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Container>
           <CitySideBySide />
         </Container>
-        </ QueryClientProvider>
+      </ QueryClientProvider>
     </div>
   );
 }
