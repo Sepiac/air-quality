@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CitiesResult } from '../api'
 import { Grid } from 'semantic-ui-react'
 import { CityViewer, CityPicker } from '.'
