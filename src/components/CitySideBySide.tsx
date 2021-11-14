@@ -19,14 +19,14 @@ const CitySideBySide = (props: Props) => {
   return (
     <Grid columns={2} >
       <Grid.Row>
-        <Grid.Column floated='left' width={5}>
+        <Grid.Column floated='left' width={7}>
           <CityPicker setCity={setLeftCity} setLocations={setLeftLocations} />
           <CityViewer city={leftCity} />
           {leftLocations?.map(location => (
             <LocationViewer location={location} />
           ))}
         </Grid.Column>
-        <Grid.Column floated='right' width={5}>
+        <Grid.Column floated='right' width={7}>
           <CityPicker setCity={setRightCity} setLocations={setRightLocations} />
           <CityViewer city={rightCity} />
           {rightLocations?.map(location => (
