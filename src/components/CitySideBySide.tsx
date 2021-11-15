@@ -37,7 +37,7 @@ const CitySideBySide = (props: Props) => {
               ))}
             </>
           ) : (
-            <Loader active />
+            <p>... loading</p>
           )}
 
         </Grid.Column>
@@ -56,7 +56,7 @@ const CitySideBySide = (props: Props) => {
               ))}
             </>
           ) : (
-            <Loader active />
+            <p>... loading</p>
           )}
 
         </Grid.Column>
