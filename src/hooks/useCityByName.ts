@@ -7,7 +7,8 @@ const useCityByName = (cityName: string) => {
       city: cityName
     }
   }), {
-    staleTime: (1000 * 60) * 60
+    staleTime: (1000 * 60) * 60,
+    enabled: !!cityName
   })
 }
 

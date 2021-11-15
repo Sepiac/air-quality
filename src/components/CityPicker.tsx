@@ -4,14 +4,19 @@ import { useCityByName, useLocationsByCity } from '../hooks'
 
 interface Props {
   setCity: Function,
+  setIsLoading: Function,
   setLocations: Function
 }
 
 const CityPicker = (props: Props) => {
-  const { setCity, setLocations } = props
+  const { setCity, setLocations, setIsLoading} = props
   const [citySearchName, setCitySearchName] = useState('')
-  const {data: citiesData} = useCityByName(citySearchName)
+  const {data: citiesData, isLoading} = useCityByName(citySearchName)
   const {data: locationsData} = useLocationsByCity(citySearchName)
+
+  useEffect(() => {
+    setIsLoading(isLoading)
+  }, [isLoading, setIsLoading])
 
   useEffect(() => {
     setCity(citiesData?.results[0])
