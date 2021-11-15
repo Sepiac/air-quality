@@ -28,17 +28,12 @@ const CitySideBySide = (props: Props) => {
             setLocations={setLeftLocations}
             setIsLoading={setLeftCityIsLoading}
           />
-          {!leftCityIsLoading ? (
-            <>
-              <CityViewer city={leftCity} />
-              <Divider />
-              {leftLocations?.map(location => (
-                <LocationViewer location={location} />
-              ))}
-            </>
-          ) : (
-            <p>... loading</p>
-          )}
+          <CityViewer city={leftCity} />
+          <Divider />
+          {leftLocations?.map(location => (
+            <LocationViewer location={location} />
+          ))}
+          <Loader active={leftCityIsLoading} />
 
         </Grid.Column>
         <Grid.Column floated='right' width={7}>
@@ -47,18 +42,12 @@ const CitySideBySide = (props: Props) => {
             setLocations={setRightLocations}
             setIsLoading={setRightCityIsLoading}
           />
-          {!rightCityIsLoading ? (
-            <>
-              <CityViewer city={rightCity} />
-              <Divider />
-              {rightLocations?.map(location => (
-                <LocationViewer location={location} />
-              ))}
-            </>
-          ) : (
-            <p>... loading</p>
-          )}
-
+          <CityViewer city={rightCity} />
+          <Divider />
+          {rightLocations?.map(location => (
+            <LocationViewer location={location} />
+          ))}
+          <Loader active={rightCityIsLoading} />
         </Grid.Column>
       </Grid.Row>
     </Grid >
