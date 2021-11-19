@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Input } from 'semantic-ui-react'
 import { useCityByName, useLocationsByCity } from '../hooks'
+import { debounce } from 'lodash'
 
 interface Props {
   setCity: Function,
@@ -27,7 +28,7 @@ const CityPicker = (props: Props) => {
   }, [locationsData?.results, setLocations])
 
   return (
-    <Input placeholder="Type the name of a city" onChange={e => setCitySearchName(e.target.value)}/>
+    <Input placeholder="Type the name of a city" onChange={debounce(e => setCitySearchName(e.target.value), 300)}/>
   )
 }
 
