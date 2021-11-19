@@ -30,8 +30,8 @@ const CitySideBySide = (props: Props) => {
           />
           <CityViewer city={leftCity} />
           <Divider />
-          {leftLocations?.map(location => (
-            <LocationViewer location={location} />
+          {leftLocations?.map((location, index) => (
+            <LocationViewer key={index} location={location} />
           ))}
           <Loader active={leftCityIsLoading} />
 
@@ -44,8 +44,8 @@ const CitySideBySide = (props: Props) => {
           />
           <CityViewer city={rightCity} />
           <Divider />
-          {rightLocations?.map(location => (
-            <LocationViewer location={location} />
+          {rightLocations?.map((location, index) => (
+            <LocationViewer key={index} location={location} />
           ))}
           <Loader active={rightCityIsLoading} />
         </Grid.Column>

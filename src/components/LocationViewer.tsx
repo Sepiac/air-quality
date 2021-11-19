@@ -14,15 +14,19 @@ const CityViewer = (props: Props) => {
       <Header as="h3">{location?.name}</Header>
       <Table striped>
         <Table.Header>
-          <Table.HeaderCell>Pollutant</Table.HeaderCell>
-          <Table.HeaderCell>Measurement</Table.HeaderCell>
-        </Table.Header>
-        {location?.parameters.map(param => (
           <Table.Row>
-            <Table.Cell>{param?.displayName}</Table.Cell>
-            <Table.Cell>{param?.lastValue} {param?.unit}</Table.Cell>
+            <Table.HeaderCell>Pollutant</Table.HeaderCell>
+            <Table.HeaderCell>Measurement</Table.HeaderCell>
           </Table.Row>
-        ))}
+        </Table.Header>
+        <Table.Body>
+          {location?.parameters.map((param, index) => (
+            <Table.Row key={index}>
+              <Table.Cell>{param?.displayName}</Table.Cell>
+              <Table.Cell>{param?.lastValue} {param?.unit}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
       </Table>
     </>
   )
