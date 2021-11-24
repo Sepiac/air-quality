@@ -29,11 +29,11 @@ const CitySideBySide = (props: Props) => {
             setIsLoading={setLeftCityIsLoading}
           />
           <CityViewer city={leftCity} />
+          <Loader active={leftCityIsLoading} inline />
           <Divider />
           {leftLocations?.map((location, index) => (
             <LocationViewer key={index} location={location} />
           ))}
-          <Loader active={leftCityIsLoading} />
 
         </Grid.Column>
         <Grid.Column floated='right' width={7}>
@@ -43,11 +43,11 @@ const CitySideBySide = (props: Props) => {
             setIsLoading={setRightCityIsLoading}
           />
           <CityViewer city={rightCity} />
+          <Loader active={rightCityIsLoading} inline />
           <Divider />
           {rightLocations?.map((location, index) => (
             <LocationViewer key={index} location={location} />
           ))}
-          <Loader active={rightCityIsLoading} />
         </Grid.Column>
       </Grid.Row>
     </Grid >
