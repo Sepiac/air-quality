@@ -10,3 +10,5 @@ export { default as LocationViewer } from './LocationViewer'
 export {default as LocationParameterViewer} from './LocationParameterViewer'
 
 export {default as CityRealTimeForm} from './CityRealTimeForm'
+
+export { SignatureFooter } from './SignatureFooter'
