@@ -8,3 +8,5 @@ export {default as CityPicker } from './CityPicker'
 export { default as LocationViewer } from './LocationViewer'
 
 export {default as LocationParameterViewer} from './LocationParameterViewer'
+
+export {default as CityRealTimeForm} from './CityRealTimeForm'
