@@ -1,7 +1,6 @@
 import React from 'react'
 import { LocationsResult } from '../api'
-import { LocationParameterViewer } from '.'
-import { Segment, Header, Table } from 'semantic-ui-react'
+import { Header, Table } from 'semantic-ui-react'
 
 export interface Props {
   location: LocationsResult | undefined
