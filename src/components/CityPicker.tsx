@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { Input } from 'semantic-ui-react'
 import { useCityByName, useLocationsByCity } from '../hooks'
-import { debounce } from 'lodash'
+import { debounce, each, join } from 'lodash'
 
 interface Props {
   setCity: Function,
   setIsLoading: Function,
   setLocations: Function
+}
+
+const capitalizeCityName = (cityName: string) => {
+  const cityNameArray:string[] = []
+  each(cityName.split(' '), word => {
+    cityNameArray.push(word.charAt(0).toUpperCase() + word.slice(1))
+  })
+  return join(cityNameArray, ' ');
 }
 
 const CityPicker = (props: Props) => {
@@ -28,7 +36,7 @@ const CityPicker = (props: Props) => {
   }, [locationsData?.results, setLocations])
 
   return (
-    <Input placeholder="Type the name of a city" onChange={debounce(e => setCitySearchName(e.target.value), 300)}/>
+    <Input placeholder="Type the name of a city" onChange={debounce(e => setCitySearchName(capitalizeCityName(e.target.value)), 300)}/>
   )
 }
 
