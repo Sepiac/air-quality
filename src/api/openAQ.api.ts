@@ -5,7 +5,7 @@ interface AxiosResponse<T> {
 }
 
 const getOpenAQResponse = async <T>(path: string, options: object={}, version: string='/v2'):Promise<T> => {
-  const response:AxiosResponse<T> = await axios.get(`https://docs.openaq.org${version}${path}`, options)
+  const response:AxiosResponse<T> = await axios.get(`https://api.openaq.org${version}${path}`, options)
   return response?.data
 };
 

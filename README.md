@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is a coding exercise for practice using react to build an application on top of an open API and a front end development framework. The framework is [Semantic UI React](https://react.semantic-ui.com/) and the open API is [Open AQ](https://docs.openaq.org/).
+This project is a coding exercise for practice using react to build an application on top of an open API and a front end development framework. The framework is [Semantic UI React](https://react.semantic-ui.com/) and the open API is [Open AQ](https://api.openaq.org/).
 
 ## Available Scripts
 
